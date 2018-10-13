@@ -86,6 +86,13 @@
 <script>
 export default {
   name: 'HelloWorld',
+  render(createElement) {
+    return createElement('div', {
+      attrs: {
+        id: 'appp'
+      }
+    }, this.message)
+  },
   data () {
     return {
       msg: 'this is vue'
