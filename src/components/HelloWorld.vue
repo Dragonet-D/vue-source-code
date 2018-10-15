@@ -95,7 +95,7 @@ export default {
   },
   data () {
     return {
-      msg: 'this is vue',
+      msg: 'this is vue'
     }
   }
 }
