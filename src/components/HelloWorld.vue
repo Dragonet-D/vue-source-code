@@ -89,7 +89,7 @@ export default {
   render(createElement) {
     return createElement('div', {
       attrs: {
-        id: 'appp'
+        id: 'app'
       }
     }, this.message)
   },
