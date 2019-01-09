@@ -7,6 +7,17 @@ Vue.config.productionTip = false;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  data() {
+    return {
+      message: "hello vue"
+    }
+  },
   router,
-  render: h => h(App)
+  render(h) {
+    return h('div', {
+      attrs: {
+        id: "#app"
+      }
+    }, this.message)
+  }
 });
