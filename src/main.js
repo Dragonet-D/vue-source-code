@@ -13,11 +13,5 @@ new Vue({
     }
   },
   router,
-  render(h) {
-    return h('div', {
-      attrs: {
-        id: "#app"
-      }
-    }, this.message)
-  }
+  render: h => h(App)
 });
