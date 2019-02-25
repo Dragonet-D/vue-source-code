@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="./vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <input type="text" v-model="value">
+  <button @click="submit">add</button>
+  <div>
+    <li v-for="(value, index) in list" :key="index">{{value}}</li>
+  </div>
+</div>
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data() {
+      return {
+        message: 'hello vue',
+        value: '',
+        list: []
+      }
+    },
+    methods: {
+      submit() {
+        this.list.push(this.value)
+        this.value = ''
+      }
+    }
+  })
+</script>
+</body>
+</html>
