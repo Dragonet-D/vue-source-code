@@ -5,4 +5,3 @@ updateComponent中实现了vdom的patch
 
 data中每次修改,执行updateComponent
 
-
