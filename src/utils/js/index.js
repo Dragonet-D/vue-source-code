@@ -69,7 +69,7 @@ function find(data, target) {
     target.forEach(itemTarget => {
       const findOne = _.find([item], itemTarget);
       if (findOne) {
-        result.push(findOne)
+        result.push(JSON.stringify(findOne))
       }
     })
   })
@@ -84,3 +84,4 @@ export function handleFind() {
   console.log(result);
   return result
 }
+
