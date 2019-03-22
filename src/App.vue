@@ -6,8 +6,12 @@
 </template>
 
 <script>
+  import { handleFind } from "./utils/js"
   export default {
     name: 'App',
+    mounted() {
+      handleFind()
+    }
   }
 </script>
 
