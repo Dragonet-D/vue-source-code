@@ -81,7 +81,11 @@ export function handleFind() {
   target.forEach(item => {
     result.push(find(data, item))
   })
-  console.log(result);
+  console.log(f1(result[0], result[1], result[2]));
   return result
+}
+
+function f1(tagert, data1, data2) {
+  return [...tagert].filter(x => new Set(data1).has(x)).filter(x => new Set(data2).has(x));
 }
 
