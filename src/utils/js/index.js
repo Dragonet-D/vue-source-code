@@ -13,58 +13,69 @@ function f(a) {
 
 const data = [
   {
-    a: 'aa',
-    b: 'unknown',
-    c: '1',
+    'capalarm.alarmtype': 'aa',
+    'capalarm.state': 'unknown',
+    'capevent.severity': '1',
     count: '12'
   },
   {
-    a: 'bb',
-    b: 'known',
-    c: '2',
+    'capalarm.alarmtype': 'bb',
+    'capalarm.state': 'known',
+    'capevent.severity': '2',
     count: '122'
   },
   {
-    a: 'aa',
-    b: 'unknown',
-    c: '3',
+    'capalarm.alarmtype': 'aa',
+    'capalarm.state': 'unknown',
+    'capevent.severity': '3',
     count: '121'
   }
-]
-const target = [
-  [
-    {
-      a: 'aa'
+];
+const targetOne = {
+  "Alarm Type": ["aa"],
+  "Alarm Severity": ["1", "2"],
+  "Alarm State": ["unknown"]
+};
+
+function f2(data) {
+  const resultArr = [];
+
+  function dataFormat(data, keyName) {
+    const tempArr = []
+    if (data.length) {
+      data.forEach(item => {
+        tempArr.push({
+          [keyName]: item
+        });
+      });
     }
-  ],
-  [
-    {
-      b: 'known'
-    },
-    {
-      b: 'unknown'
-    }
-  ],
-  [
-    {
-      c: '2'
-    },
-    {
-      c: '1'
-    }
-  ]
-]
-const target1 = [
-  {
-    c: '2'
-  },
-  {
-    c: '1'
+    resultArr.push(tempArr)
   }
-]
+
+  const AlarmType = "Alarm Type"
+  const AlarmSeverity = "Alarm Severity"
+  const AlarmState = "Alarm State"
+
+  const alarmTypeData = data[AlarmType];
+  const alarmSeverityData = data[AlarmSeverity];
+  const alarmStateData = data[AlarmState];
+
+  if (alarmTypeData) {
+    dataFormat(alarmTypeData, "capalarm.alarmtype");
+  }
+  if (alarmSeverityData) {
+    dataFormat(alarmSeverityData, "capevent.severity");
+  }
+  if (alarmStateData) {
+    dataFormat(alarmStateData, "capalarm.state");
+  }
+  return resultArr
+}
+
+const target = f2(targetOne);
 
 function find(data, target) {
-  let result = []
+  let result = [];
   data.forEach(item => {
     target.forEach(itemTarget => {
       const findOne = _.find([item], itemTarget);
