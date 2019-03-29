@@ -73,7 +73,7 @@
       <li>
         <a
           href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
+          target=""
         >
           awesome-vue
         </a>
