@@ -87,11 +87,13 @@ function find(data, target) {
   return result
 }
 
-export function handleFind() {
-  const result = []
+handleFind(data, target);
+
+export function handleFind(data, target) {
+  const result = [];
   target.forEach(item => {
     result.push(find(data, item))
-  })
+  });
   console.log(f1(result[0], result[1], result[2]));
   return result
 }
