@@ -1,16 +1,17 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-view/>
+    <hello-world/>
   </div>
 </template>
 
 <script>
-  import { handleFind } from "./utils/js"
+  // import { handleFind } from "./utils/js"
+  import HelloWorld from "./components/HelloWorld"
   export default {
     name: 'App',
-    mounted() {
-      handleFind()
+    components: {
+      HelloWorld
     }
   }
 </script>
