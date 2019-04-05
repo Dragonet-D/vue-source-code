@@ -24,7 +24,7 @@ Vue.mixin({
 let app = new Vue({
   el: '#app',
   render: h => h(childComp)
-})
+});
 
 /*
 1,外部调用场景下的合并配置是通过mergeOption,并遵循一定的合并策略
