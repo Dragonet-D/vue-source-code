@@ -2,6 +2,7 @@
   <div ref="msg">{{msg}}</div>
 </template>
 <script>
+  import Vue from 'vue'
   export default {
     name: 'App',
     data() {
@@ -11,6 +12,7 @@
     },
     methods: {
       change() {
+        // Vue.delete()
         this.msg = 'Hello, Vue';
         console.log(this.$refs.msg.innerText); // hello world
         this.$nextTick(() => {
