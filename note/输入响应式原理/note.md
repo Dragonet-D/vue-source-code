@@ -60,4 +60,3 @@
 
 computed 是通过watcher实现的
 computed 可以是对象 要有get
-
