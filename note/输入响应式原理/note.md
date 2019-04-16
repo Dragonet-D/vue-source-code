@@ -60,3 +60,5 @@
 
 computed 是通过watcher实现的
 computed 可以是对象 要有get
+
+getAndInvoke 会比对computed的值 如果一样就什么都不做,如果不一样会重新渲染;
