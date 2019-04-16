@@ -30,6 +30,9 @@
       }
     },
     watch: {
+      message1(newVal) {
+        console.log(newVal);
+      },
       message: {
         immediate: true,
         handler(newVal) {
@@ -38,6 +41,7 @@
       },
       msg: {
         deep: true,
+        sync: true,
         handler(newVal) {
           console.log(newVal);
         }
