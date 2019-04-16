@@ -28,6 +28,20 @@
       name() {
         return this.message + this.message1
       }
+    },
+    watch: {
+      message: {
+        immediate: true,
+        handler(newVal) {
+          console.log(newVal);
+        }
+      },
+      msg: {
+        deep: true,
+        handler(newVal) {
+          console.log(newVal);
+        }
+      }
     }
   };
 </script>
