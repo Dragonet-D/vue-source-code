@@ -63,3 +63,31 @@ computed 可以是对象 要有get
 
 getAndInvoke 会比对computed的值 如果一样就什么都不做,如果不一样会重新渲染;
 老的computed会少计算多次渲染,新的computed会多计算少渲染
+
+- watcher 参数
+```javascript
+if (options) {
+  this.deep = !!options.deep;
+  this.user = !!options.user;
+  this.computed = !!options.computed;
+  this.sync = !!options.sync;
+  // ...
+} else {
+  this.deep = this.user = this.computed = this.sync = false
+}
+
+// sync watcher 同步watcher
+/*
+* 没设置sync会把watcher放入队列中
+* 设置了sync之后会立即执行watcher
+* */
+function update () {
+  if (this.computed) {
+    // ...
+  } else if (this.sync) {
+    this.run()
+  } else {
+    queueWatcher(this)
+  }
+}
+```
