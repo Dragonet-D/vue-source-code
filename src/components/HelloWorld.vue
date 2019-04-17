@@ -2,7 +2,9 @@
   <div class="hello">
     <h1>{{ msg.msg }}</h1>
     <h2>{{name}}</h2>
-    <button @click="changeMessage">test</button>
+    <h2>{{fullName}}</h2>
+    <button @click="changeMessage">changeMessage</button>
+    <button @click="changeName">changeName</button>
   </div>
 </template>
 
@@ -13,7 +15,9 @@
       return {
         msg: {msg: "this is vue"},
         message: 1,
-        message1: 2
+        message1: 2,
+        firstName: "John",
+        lastName: "Snow"
       };
     },
     methods: {
@@ -22,11 +26,25 @@
       },
       changeMessage() {
         this.message = 2
+      },
+      changeName() {
+        this.firstName = "AAA"
       }
     },
     computed: {
       name() {
         return this.message + this.message1
+      },
+      fullName: {
+        get() {
+          return `${this.firstName} ${this.lastName}`
+        },
+        set(newValue) {
+          const names = newValue.split(' ');
+          this.firstName = names[0];
+          this.lastName = names[names.length - 1];
+          console.log(newValue);
+        }
       }
     },
     watch: {
