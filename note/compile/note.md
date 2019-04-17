@@ -55,13 +55,13 @@ ast = {
     'children': [
       {
         'type': 2,
-      'expression': '_s(item)+":"+_s(index)'
-      'text': '{{item}}:{{index}}',
-      'tokens': [
-        {'@binding':'item'},
-        ':',
-        {'@binding':'index'}
-      ]
+        'expression': '_s(item)+":"+_s(index)',
+        'text': '{{item}}:{{index}}',
+        'tokens': [
+          {'@binding':'item'},
+          ':',
+          {'@binding':'index'}
+        ]
       }
     ]
   }]
