@@ -41,7 +41,7 @@ ast = {
       '@click': 'clickItem(index)',
       'v-for': '(item,index) in data'
      },
-    'parent': // ul ast element
+    'parent': '',// ul ast element
     'plain': false,
     'events': {
       'click': {
@@ -53,7 +53,8 @@ ast = {
     'alias': 'item',
     'iterator1': 'index',
     'children': [
-      'type': 2,
+      {
+        'type': 2,
       'expression': '_s(item)+":"+_s(index)'
       'text': '{{item}}:{{index}}',
       'tokens': [
@@ -61,6 +62,7 @@ ast = {
         ':',
         {'@binding':'index'}
       ]
+      }
     ]
   }]
 }
