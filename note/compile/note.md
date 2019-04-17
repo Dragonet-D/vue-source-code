@@ -12,7 +12,7 @@
     >{{item}}:{{index}}</li>
 </ul>
 <script>
-ast = {
+const ast = {
   'type': 1,
   'tag': 'ul',
   'attrsList': [],
@@ -24,7 +24,7 @@ ast = {
   'if': 'isShow',
   'ifConditions': [{
     'exp': 'isShow',
-    'block': // ul ast element
+    'block': ''// ul ast element
   }],
   'parent': undefined,
   'plain': false,
