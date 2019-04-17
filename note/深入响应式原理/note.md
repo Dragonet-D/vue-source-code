@@ -91,3 +91,68 @@ function update () {
   }
 }
 ```
+## 组件更新
+
+新旧节点不同 大致分为三步
+
+创建新节点 -> 更新占位符节点 -> 删除旧节点
+
+- 创建新节点
+- 更新父的占位符节点
+- 删除旧节点
+
+新旧节点相同
+
+- 执行 prepatch 钩子函数
+- 执行 update 钩子函数
+- 完成 patch 过程
+- 执行 postpatch 钩子函数
+
+### updateChildren
+```vue
+<template>
+  <div id="app">
+    <div>
+      <ul>
+        <li v-for="item in items" :key="item.id">{{ item.val }}</li>
+      </ul>
+    </div>
+    <button @click="change">change</button>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'App',
+    data() {
+      return {
+        items: [
+          {id: 0, val: 'A'},
+          {id: 1, val: 'B'},
+          {id: 2, val: 'C'},
+          {id: 3, val: 'D'}
+        ]
+      }
+    },
+    methods: {
+      change() {
+        this.items.reverse().push({id: 4, val: 'E'})
+      }
+    }
+  }
+</script>
+```
+- 第一步
+![first](https://ustbhuangyi.github.io/vue-analysis/assets/update-children-1.png)
+- 第二步
+![second](https://ustbhuangyi.github.io/vue-analysis/assets/update-children-2.png)
+- 第三步
+![third](https://ustbhuangyi.github.io/vue-analysis/assets/update-children-3.png)
+- 第四步
+![fourth](https://ustbhuangyi.github.io/vue-analysis/assets/update-children-4.png)
+- 第五步
+![fifth](https://ustbhuangyi.github.io/vue-analysis/assets/update-children-5.png)
+- 第六步
+![sixth](https://ustbhuangyi.github.io/vue-analysis/assets/update-children-6.png)
+- reactive
+![reactive](./../images/reactive.png)
