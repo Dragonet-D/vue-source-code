@@ -5,10 +5,20 @@
     <h2>{{fullName}}</h2>
     <button @click="changeMessage">changeMessage</button>
     <button @click="changeName">changeName</button>
+    <test1 v-model="message">
+      slot test1
+      <p slot="nameSlot">hello world!!!</p>
+      <template slot-scope="props">
+        <div>{{`${props.text} ${props.message}`}}</div>
+      </template>
+    </test1>
+    <p>{{message}}</p>
   </div>
 </template>
 
 <script>
+  import test1 from "./test/test1";
+
   export default {
     name: "HelloWorld",
     data() {
@@ -64,6 +74,9 @@
           console.log(newVal);
         }
       }
+    },
+    components: {
+      test1
     }
   };
 </script>
