@@ -1,5 +1,44 @@
 # keep-alive
 
+```javascript
+let A = {
+  template: '<div class="a">' +
+  '<p>A Comp</p>' +
+  '</div>',
+  name: 'A'
+}
+
+let B = {
+  template: '<div class="b">' +
+  '<p>B Comp</p>' +
+  '</div>',
+  name: 'B'
+}
+
+let vm = new Vue({
+  el: '#app',
+  template: '<div>' +
+  '<keep-alive>' +
+  '<component :is="currentComp">' +
+  '</component>' +
+  '</keep-alive>' +
+  '<button @click="change">switch</button>' +
+  '</div>',
+  data: {
+    currentComp: 'A'
+  },
+  methods: {
+    change() {
+      this.currentComp = this.currentComp === 'A' ? 'B' : 'A'
+    }
+  },
+  components: {
+    A,
+    B
+  }
+})
+```
+
 ## summary
 
 - keep-alive 组件是一个内置抽象组件,它的实现通过定义render函数并且利用了插槽;
