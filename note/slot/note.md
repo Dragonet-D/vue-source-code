@@ -55,6 +55,17 @@ let vm = new Vue({
   }
 })
 ````
+这里我们定义了 AppLayout 子组件，它内部定义了 3 个插槽，2 个为具名插槽，一个 name 为 header，一个 name 为 footer，还有一个没有定义 name 的是默认插槽。 <slot> 和 </slot> 之前填写的内容为默认内容。我们的父组件注册和引用了 AppLayout 的组件，并在组件内部定义了一些元素，用来替换插槽，那么它最终生成的 DOM 如下:
+
+```html
+<div>
+  <div class="container">
+    <header><h1>我是标题</h1></header>
+    <main><p>我是内容</p></main>
+    <footer><p>其它信息</p></footer>
+  </div>
+</div>
+```
 
 ## summary 
 
