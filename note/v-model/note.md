@@ -121,7 +121,24 @@ parent component
 </script>
 
 ```
-
+相当于这边编写父组件
+```javascript
+let vm = new Vue({
+  el: '#app',
+  template: '<div>' +
+  '<child :value="message" @input="message=arguments[0]"></child>' +
+  '<p>Message is: {{ message }}</p>' +
+  '</div>',
+  data() {
+    return {
+      message: ''
+    }
+  },
+  components: {
+    Child
+  }
+})
+```
 ## summary
 - v-model的本质就是语法糖,但是运行时也做了一些优化
 - v-model即可以支持原生表单元素,也可以支持组件.在组件的实现中,我们可以配置子组件接收的prop名称,以及派发事件的名称;
