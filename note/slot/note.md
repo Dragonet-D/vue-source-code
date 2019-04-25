@@ -24,6 +24,12 @@ export default {
 }
 </script>
 ```
+生成的DOM:
+```html
+<div>
+<div>Hello World!</div>
+</div>
+```
 
 ```javascript
 let AppLayout = {
