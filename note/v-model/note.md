@@ -4,6 +4,7 @@
 这就是典型的 Vue 的父子组件通讯模式，父组件通过 prop 把数据传递到子组件，子组件修改了数据后把改变通过 $emit 事件的方式通知父组件，所以说组件上的 v-model 也是一种语法糖。
 - v-model是 Vue 双向绑定的真正实现，但本质上就是一种语法糖，它即可以支持原生表单元素，也可以支持自定义组件。在组件的实现中，我们是可以配置子组件接收的 prop 名称，以及派发的事件名称
 
+input v-model
 ```javascript
 let vm = new Vue({
   el: '#app',
@@ -20,6 +21,35 @@ let vm = new Vue({
 ```
 
 use v-model in the vue component
+```javascript
+let Child = {
+  template: '<div>'
+  + '<input :value="value" @input="updateValue" placeholder="edit me">' +
+  '</div>',
+  props: ['value'],
+  methods: {
+    updateValue(e) {
+      this.$emit('input', e.target.value)
+    }
+  }
+}
+
+let vm = new Vue({
+  el: '#app',
+  template: '<div>' +
+  '<child v-model="message"></child>' +
+  '<p>Message is: {{ message }}</p>' +
+  '</div>',
+  data() {
+    return {
+      message: ''
+    }
+  },
+  components: {
+    Child
+  }
+})
+```
 ```javascript
 /* @flow */
 
