@@ -24,6 +24,38 @@ export default {
 }
 </script>
 ```
+
+```javascript
+let AppLayout = {
+  template: '<div class="container">' +
+  '<header><slot name="header"></slot></header>' +
+  '<main><slot>默认内容</slot></main>' +
+  '<footer><slot name="footer"></slot></footer>' +
+  '</div>'
+}
+
+let vm = new Vue({
+  el: '#app',
+  template: '<div>' +
+  '<app-layout>' +
+  '<h1 slot="header">{{title}}</h1>' +
+  '<p>{{msg}}</p>' +
+  '<p slot="footer">{{desc}}</p>' +
+  '</app-layout>' +
+  '</div>',
+  data() {
+    return {
+      title: '我是标题',
+      msg: '我是内容',
+      desc: '其它信息'
+    }
+  },
+  components: {
+    AppLayout
+  }
+})
+````
+
 ## summary 
 
 - 普通插槽: 在父组件编译和渲染阶段生成vnodes,所以数据的作用域是父组件实例,子组件渲染的时候直接拿到这些渲染好的vnodes
