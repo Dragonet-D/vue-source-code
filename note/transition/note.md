@@ -46,3 +46,8 @@ export const transitionProps = {
   duration: [Number, String, Object]
 }
 ```
+# transition-group
+
+- transition-group组件是为了做列表的过渡,它会渲染成真实的元素
+
+- 当我们去修改列表的数据的时候,如果是添加或者删除数据,则会触发相应元素本身的过渡动画,这点和<transition>组件的实现效果是一样,除此之外<transition-group>还实现了move的过渡效果,让我们的列表过渡动画更加丰富;
