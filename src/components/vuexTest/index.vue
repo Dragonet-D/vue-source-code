@@ -1,5 +1,5 @@
 <template>
-  <div>redux test</div>
+  <div>vuex test</div>
 </template>
 
 <script>
