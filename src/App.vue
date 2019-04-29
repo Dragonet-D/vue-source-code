@@ -1,18 +1,13 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png" alt="logo">
-    <hello-world/>
+    title
+    <router-view/>
   </div>
 </template>
 
 <script>
-  // import { handleFind } from "./utils/js"
-  import HelloWorld from "./components/HelloWorld"
   export default {
     name: 'App',
-    components: {
-      HelloWorld
-    }
   }
 </script>
 
@@ -22,7 +17,5 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
   }
 </style>
