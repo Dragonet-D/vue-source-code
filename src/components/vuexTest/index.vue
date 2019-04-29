@@ -8,7 +8,7 @@
   export default {
     name: "vuexTest",
     mounted() {
-      console.log(this.$store.state);
+      // console.log(this.$store.state);
     },
     computed: {
       ...mapState(['count'])
