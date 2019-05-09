@@ -7,7 +7,7 @@ import Vuex from 'vuex'
 
 const moduleA = {
   state: {},
-  mutations: { ... },
+  mutations: {},
   actions: { ... },
   getters: { ... }
 };
