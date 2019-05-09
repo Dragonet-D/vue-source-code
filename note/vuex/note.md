@@ -3,6 +3,8 @@
 
 ## 初始化模块
 ```javascript
+import Vuex from 'vuex'
+
 const moduleA = {
   state: { ... },
   mutations: { ... },
