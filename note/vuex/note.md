@@ -15,7 +15,7 @@ const moduleA = {
 const moduleB = {
   state: {},
   mutations: {},
-  actions: { ... },
+  actions: {},
   getters: { ... },
 };
 
