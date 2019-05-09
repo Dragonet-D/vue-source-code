@@ -16,7 +16,7 @@ const moduleB = {
   state: {},
   mutations: {},
   actions: {},
-  getters: { ... },
+  getters: {},
 };
 
 const store = new Vuex.Store({
