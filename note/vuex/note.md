@@ -9,7 +9,7 @@ const moduleA = {
   state: {},
   mutations: {},
   actions: {},
-  getters: { ... }
+  getters: {}
 };
 
 const moduleB = {
